@@ -11,7 +11,7 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://play.google.com/store/apps/details?id=com.stickman.supreme.spider.stickfight.warriors.dual&hl=ru&gl=US"
           target="_blank"
           rel="noopener noreferrer"
         >
