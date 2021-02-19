@@ -2,9 +2,30 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const host = "open.my.app";
-  var android
-  const scheme = "app"
+
+  function checkOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/android/i.test(userAgent)) {
+      console.log('android')
+      return (
+        < a href="tg://resolve?domain=[username]" >
+          tme
+        </a >
+      )
+    }
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      console.log('iPad|iPhone|iPod')
+
+    }
+    if (navigator.appVersion.indexOf("Win") != -1) {
+      console.log('Win')
+    }
+    if (navigator.appVersion.indexOf("Mac") != -1) {
+      console.log('Mac')
+    }
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -20,10 +41,23 @@ function App() {
         >
           stickman
         </a>
-        <a onClick={()=>alert(navigator.platform)} href="tg://resolve?domain=[username]">
+        {
+          checkOperatingSystem()
+        }
+        {/*  navigator.platform.indexOf() === ("Windows") ? (
+             <a href="tg://resolve?domain=[username]">
+               tme
+              </a>
+                ) : (
+               <div>
+                 Hello
+               </div>
+             ) */}
+
+        {/* <a onClick={() => navigator.platform === ("Win32") ? "" : alert("")} href = "tg://resolve?domain=[username]">
           telegram
           
-        </a>
+        </a> */}
       </header>
     </div>
   );
